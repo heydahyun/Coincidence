@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coincidence</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <style>
+  @font-face {
+    font-family: Agrandir;
+    src: url("/Users/dahyun/Desktop/Sources/PP®F Font Starter Pack 2019/PP®F Fonts/Agrandir/Agrandir-GrandLight.otf") format("truetype-variations");
+  }
+
+  html, body {
+  font-family: "Agrandir";
+  /* font-weight: thin; */
+  height: 100%; width: 100%;
+  margin: 0; padding: 0;
+}
+
+body {
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+  </style>
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/css-doodle@0.15.3/css-doodle.min.js"></script>
+  <css-doodle grid=7>
+  :doodle {
+    @size: 100%;
+    grid-gap: 1px;
+
+  }
+
+  transition: all .4s ease;
+  border-top: 3vw solid hsl(149, 94%, 37%);
+  border-right: 6vw solid white;
+  box-shadow: inset pink 100px rgba(0, 0, 0, 1);
+  z-index:1;
+
+  :after {
+    content: \@hex(@rand(9632, 9687));
+    content: @pick([A-Z]);
+    line-height: -3;
+    font-size: 4vw;
+    font-weight: light;
+    color: hsl(149, 100%, 100%);
+    z-index:1;
+  }
+
+  @random {
+    border-top: 3vw solid hsl(149, 94%, 37%);
+    border-right: 2vw solid pink;
+    border-bottom: 4vw solid hsl(149, 94%, 37%);
+    border-left: 6vw solid pink;
+
+    <!-- border-style: dashed; -->
+  }
+</css-doodle>
+
+  <script>
+  const doodle = document.querySelector('css-doodle');
+
+  window.addEventListener('click', () => doodle.update());
+  </script>
+</body>
+
+</html>
